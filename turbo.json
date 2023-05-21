@@ -6,9 +6,15 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
+      "outputMode": "full"
+    },
     "lint": {},
     "dev": {
-      "cache": false,
+      "cache": true,
       "persistent": true
     }
   }
